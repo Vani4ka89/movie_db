@@ -1,0 +1,12 @@
+.Header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 25px;
+    background-color: darkblue;
+}
+
+.Header a {
+    text-decoration: none;
+    color: snow;
+}

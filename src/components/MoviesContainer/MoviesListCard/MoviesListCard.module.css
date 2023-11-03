@@ -1,0 +1,9 @@
+.MoviesListCard {
+    border: 2px solid;
+    margin: 10px;
+    width: calc(25% - 24px);
+}
+
+.MoviesListCard img {
+    width: 200px;
+}
