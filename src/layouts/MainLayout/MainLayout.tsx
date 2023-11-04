@@ -2,6 +2,7 @@ import {FC, PropsWithChildren} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {Header} from "../../components";
+import {Footer} from "../../components/Footer/Footer";
 
 interface IProps extends PropsWithChildren {
 
@@ -12,6 +13,7 @@ const MainLayout: FC<IProps> = () => {
         <div>
             <Header/>
             <Outlet/>
+            <Footer/>
         </div>
     );
 };

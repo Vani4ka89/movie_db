@@ -1,0 +1,20 @@
+.Footer {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: lightgray;
+        flex-direction: column;
+        background-color: #020c38;
+    }
+
+    .content {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content img {
+        height: 10px;
+        margin-right: 10px;
+    }

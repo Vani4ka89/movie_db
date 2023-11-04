@@ -1,0 +1,15 @@
+.btnBox button{
+    font-size: 18px;
+    margin: 10px;
+    color: #7c5af6;
+    background-color: rgba(0, 139, 139, 0.2);
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid darkcyan;
+    border-radius: 10px;
+}
+
+.btnBox button:hover {
+    background-color: darkcyan;
+    color: #ffcc00;
+}
