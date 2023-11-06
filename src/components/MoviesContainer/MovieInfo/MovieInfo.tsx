@@ -1,4 +1,5 @@
 import {FC, PropsWithChildren, useEffect, useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
 import {Rating} from "@mui/material";
 
@@ -14,6 +15,7 @@ interface IProps extends PropsWithChildren {
 
 const MovieInfo: FC<IProps> = ({movieId}) => {
     const [movie, setMovie] = useState<IMovie>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         movieService.getById(+movieId).then(({data}) => setMovie(data));
@@ -21,10 +23,10 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
 
     if (!movie) return;
 
-    const {poster_path, title, original_title, vote_average, overview} = movie;
+    const {id, poster_path, title, original_title, vote_average, overview} = movie;
 
     const getMovieVideos = () => {
-
+        navigate(`/movies/${id}/video`)
     }
 
     return (

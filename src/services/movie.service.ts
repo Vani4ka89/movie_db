@@ -6,7 +6,8 @@ import {IMovie, IPagination} from "../interfaces";
 const movieService = {
     getAll: (page: number): IRes<IPagination<IMovie[]>> => axiosService.get(urls.movies.discover, {params: {page}}),
     getById: (movieId: number): IRes<IMovie> => axiosService.get(urls.movies.byId(movieId)),
-    getMoviesOfGenre: (genreId: number, page: number): IRes<IPagination<IMovie[]>> => axiosService.get(urls.genres.moviesOfGenre(genreId), {params: {page}})
+    getMoviesOfGenre: (genreId: number, page: number): IRes<IPagination<IMovie[]>> => axiosService.get(urls.genres.moviesOfGenre(genreId), {params: {page}}),
+    getFoundMovies: (searchTerm: string | number, page: number): IRes<IPagination<IMovie[]>> => axiosService.get(urls.movies.search(searchTerm), {params: {page}})
 }
 
 export {

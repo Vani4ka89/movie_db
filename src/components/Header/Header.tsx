@@ -3,16 +3,19 @@ import {NavLink, useNavigate} from "react-router-dom";
 
 import css from './Header.module.css';
 
-import sun from '../../assets/images/free-icon-sun-5247953.png';
-import moon from '../../assets/images/free-icon-moon-3599494.png';
+// import sun from '../../assets/images/free-icon-sun-5247953.png';
+// import moon from '../../assets/images/free-icon-moon-3599494.png';
+import {useSearchTerm} from "../../hooks/useSearchTerm";
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const {setSearchTerm} = useSearchTerm();
+    const {searchTerm} = useSearchTerm();
 
-    const movieSearch = async (e: any) => {
+    const searchMovies = async (e: any) => {
         e.preventDefault();
-        // dispatch(moviesActions.setSearchTerm(e.target.value));
+        setSearchTerm(e.target.value);
         if (e.target.value) {
             navigate('/movies/search');
         } else {
@@ -25,9 +28,9 @@ const Header = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
-    const setTheme = () => {
-        // dispatch(themeActions.themeToggle())
-    }
+    // const setTheme = () => {
+    //     // dispatch(themeActions.themeToggle())
+    // }
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary"
@@ -68,8 +71,8 @@ const Header = () => {
                             <input className="form-control me-2" type="search" placeholder="Search"
                                    style={{color: "darkgreen", fontWeight: "bolder"}}
                                    aria-label="Search"
-                                   value={''}
-                                   onChange={movieSearch}/>
+                                   value={searchTerm}
+                                   onChange={searchMovies}/>
                             {/*<button className="btn btn-outline-success" type="submit" onClick={movieSearch}>Search*/}
                             {/*</button>*/}
                         </form>

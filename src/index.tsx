@@ -4,10 +4,13 @@ import {RouterProvider} from "react-router-dom";
 import './index.css';
 
 import {router} from "./router";
+import {ContextProvider} from "./hoc/ContextProvider";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <RouterProvider router={router}/>
+    <ContextProvider>
+        <RouterProvider router={router}/>
+    </ContextProvider>
 );

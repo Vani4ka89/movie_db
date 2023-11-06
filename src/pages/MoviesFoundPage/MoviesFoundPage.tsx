@@ -1,13 +1,18 @@
 import {FC, PropsWithChildren} from 'react';
 
+import {GenresBadgesList, MoviesFound, MoviesPagination} from "../../components";
+import css from './MoviesFoundPage.module.css';
+
 interface IProps extends PropsWithChildren {
 
 }
 
 const MoviesFoundPage: FC<IProps> = () => {
     return (
-        <div>
-            MoviesFoundPage
+        <div className={css.MoviesFoundPage}>
+            <GenresBadgesList/>
+            <MoviesFound/>
+            <MoviesPagination/>
         </div>
     );
 };

@@ -5,3 +5,5 @@ export * from './MoviesFoundPage/MoviesFoundPage';
 export * from './MoviesOfGenrePage/MoviesOfGenrePage';
 export * from './MoviesOfGenrePage/MoviesOfGenrePage.module.css';
 export * from './MoviesVideoPage/MoviesVideoPage';
+export * from './MoviesFoundPage/MoviesFoundPage';
+export * from './MoviesFoundPage/MoviesFoundPage.module.css';

@@ -8,3 +8,5 @@ export * from './MoviesPagination/MoviesPagination';
 export * from './MoviesPagination/MoviesPagination.module.css';
 export * from './MovieInfo/MovieInfo';
 export * from './MovieInfo/MovieInfo.module.css';
+export * from './MoviesFound/MoviesFound';
+export * from './MoviesFound/MoviesFound.module.css';
