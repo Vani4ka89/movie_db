@@ -9,7 +9,7 @@ const GenresBadgesList: FC = () => {
     const [badges, setBadges] = useState<IGenreBadge[]>([]);
 
     useEffect(() => {
-genreService.getAll().then(({data:{genres}})=>setBadges(genres))
+        genreService.getAll().then(({data: {genres}}) => setBadges(genres));
     }, []);
 
     return (

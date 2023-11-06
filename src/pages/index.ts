@@ -1,2 +1,2 @@
 export * from './MoviesPage/MoviesPage';
-export * from './GenresListPage/GenresListPage';
+export * from './MoviesOfGenrePage/MoviesOfGenrePage';

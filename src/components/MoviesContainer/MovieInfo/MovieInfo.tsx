@@ -2,38 +2,39 @@ import {FC, PropsWithChildren, useEffect, useState} from 'react';
 
 import {Rating} from "@mui/material";
 
-import {movieService} from "../../../services";
 import {IMovie} from "../../../interfaces";
+import {movieService} from "../../../services";
 import {posterBaseUrl} from "../../../constants";
+import {GenreBadge} from "../../GenreBadge/GenreBadge";
+import css from './MovieInfo.module.css';
 
 interface IProps extends PropsWithChildren {
     movieId: string;
 }
 
-
 const MovieInfo: FC<IProps> = ({movieId}) => {
-    const [movie, setMovie] = useState<IMovie>();
+    const [movie, setMovie] = useState<IMovie>(null);
 
     useEffect(() => {
-        movieService.getById(+movieId).then(({data}) => {
-            setMovie(data)
-        })
+        movieService.getById(+movieId).then(({data}) => setMovie(data));
     }, [movieId]);
 
-    if (!movie) {
-        return
-    }
+    if (!movie) return;
 
     const {poster_path, title, original_title, vote_average, overview} = movie;
 
+    const getMovieVideos = () => {
+
+    }
+
     return (
-        <div className={'main-container'}>
+        <div className={css.MovieInfo}>
             <div>
                 <img src={`${posterBaseUrl}${poster_path}`} alt={title}/>
             </div>
-            <div className={'content'}>
+            <div className={css.content}>
                 <h1>{original_title}</h1>
-                {/*<GenreBadge/>*/}
+                <GenreBadge/>
                 <p>Rating</p>
                 <div>
                     <Rating
@@ -46,7 +47,7 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
                 </div>
                 <p>Overview</p>
                 <h5>{overview}</h5>
-                {/*<button className={'btn-play'} onClick={getMovieVideos}>PLAY</button>*/}
+                <button className={css.btnPlay} onClick={getMovieVideos}>PLAY</button>
             </div>
         </div>
     );

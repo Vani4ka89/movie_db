@@ -1,10 +1,11 @@
 import React, {FC, PropsWithChildren} from 'react';
+import {useNavigate} from "react-router-dom";
+
 import {Rating} from "@mui/material";
 
 import {IMovie} from "../../../interfaces";
 import {posterBaseUrl} from "../../../constants";
 import css from './MoviesListCard.module.css';
-import {useNavigate} from "react-router-dom";
 
 interface IProps extends PropsWithChildren {
     movie: IMovie;
@@ -15,7 +16,7 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
     const navigate = useNavigate();
 
     const getMovieInfo = () => {
-        navigate(`/movies/${id}`)
+        navigate(`/movies/${id}`);
     };
 
     return (
@@ -35,7 +36,6 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
                             <div className={css.year}>
                                 {release_date?.substring(0, 4)}
                             </div>
-
                         </div>
                     </div>
                 </div>}

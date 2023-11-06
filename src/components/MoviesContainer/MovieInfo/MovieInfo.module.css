@@ -1,0 +1,52 @@
+.MovieInfo {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MovieInfo h1 {
+    margin-bottom: 30px;
+}
+
+.MovieInfo img {
+    height: 80%;
+    width: 74.9%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 800px;
+    margin-left: 30px;
+    padding-bottom: 30px;
+}
+
+.content p {
+    margin-top: 50px;
+}
+
+.content h1, p, h5 {
+    text-align: center;
+    color: #000;
+}
+
+.btnPlay {
+    margin-top: 20px;
+    padding: 5px 30px;
+    color: #7c5af6;
+    border: 1px solid darkcyan;
+    background-color: rgba(0, 139, 139, 0.2);
+    border-radius: 20px 20px;
+    transition: all ease 300ms;
+}
+
+.btnPlay:hover {
+    background-color: rgba(78, 234, 99, 0.2);
+    color: #ffcc00;
+}

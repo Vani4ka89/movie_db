@@ -10,10 +10,16 @@ const genres = '/genre/movie/list';
 const urls = {
     movies: {
         discover,
-        byId: (movieId: number): string => `${movie}/${movieId}`
+        nowPlaying: `${movie}/now_playing`,
+        popular: `${movie}/popular`,
+        lists: (movieId: number): string => `${movie}/${movieId}/lists`,
+        byId: (movieId: number): string => `${movie}/${movieId}`,
+        search: (searchTerm: string | number): string => `/search/${movie}?query=${searchTerm}`,
+        video: (movieId: number): string => `${movie}/${movieId}/videos`
     },
     genres: {
-        list: genres
+        list: genres,
+        moviesOfGenre: (genreId: number): string => `/genre/${genreId}/movies`,
     }
 }
 
@@ -23,3 +29,16 @@ export {
     posterBaseUrl,
     urls
 }
+
+
+//         discover: `/discover/movie`,
+//         nowPlaying: '/movie/now_playing',
+//         details: (movie_id: number): string => `/movie/${movie_id}`,
+//         lists: (movie_id: number): string => `/movie/${movie_id}/lists`,
+//         popular: `/movie/popular`,
+
+//         genresList: `/genre/movie/list`,
+//         moviesOfGenre: (genre_id: number): string => `/genre/${genre_id}/movies`,
+
+//         searchMovie: (searchTerm: string | number): string => `/search/movie?query=${searchTerm}`,
+//         videos: (movie_id: number): string => `/movie/${movie_id}/videos`
