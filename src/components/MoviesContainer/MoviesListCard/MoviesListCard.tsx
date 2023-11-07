@@ -26,8 +26,8 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
                     <div className={css.imageBlock}>
                         <img src={`${posterBaseUrl}/${poster_path}`} alt={title}/>
                     </div>
-                    <div className={css.cardContent}>
                         <h5>{title}</h5>
+                    {/*<div className={css.cardContent}>*/}
                         <div className={css.additionalData}>
                             <div>
                                 <Rating name="read-only" defaultValue={vote_average} readOnly max={10} precision={0.5}
@@ -37,7 +37,7 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
                                 {release_date?.substring(0, 4)}
                             </div>
                         </div>
-                    </div>
+                    {/*</div>*/}
                 </div>}
         </div>
     );

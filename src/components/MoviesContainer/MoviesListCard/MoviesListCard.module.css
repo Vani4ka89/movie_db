@@ -1,7 +1,8 @@
 .MoviesListCard {
-    height: 450px;
+    height: 420px;
     width: 250px;
     margin: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,8 +21,8 @@
 }
 
 .imageBlock {
-    width: 240px;
-    height: 350px;
+    width: 100%;
+    height: 80%;
     border-radius: 16px 16px 0 0;
 }
 
@@ -32,18 +33,19 @@
     border-radius: 15px 15px 0 0;
 }
 
-.cardContent {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 auto;
-    color: snow;
-    padding: 5px;
-}
+/*.cardContent {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex: 0 1 auto;*/
+/*    color: snow;*/
+/*    padding: 5px;*/
+/*}*/
 
-.card h5 {
-    font-size: 16px;
+.MoviesListCard h5 {
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 5px 0 20px 0;
+    color: snow;
 }
 
 .additionalData {

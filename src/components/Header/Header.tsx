@@ -1,21 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 
 import css from './Header.module.css';
-
-// import sun from '../../assets/images/free-icon-sun-5247953.png';
-// import moon from '../../assets/images/free-icon-moon-3599494.png';
+import sun from '../../assets/images/free-icon-sun-5247953.png';
+import moon from '../../assets/images/free-icon-moon-3599494.png';
 import {useSearchTerm} from "../../hooks/useSearchTerm";
 
 const Header = () => {
-
     const navigate = useNavigate();
-    const {setSearchTerm} = useSearchTerm();
-    const {searchTerm} = useSearchTerm();
+    const {searchTerm, setSearchTerm} = useSearchTerm();
+    const [lightTheme, setLightTheme] = useState<boolean>(false);
 
-    const searchMovies = async (e: any) => {
+    const searchMovies = async (e: ReturnType<typeof Object>) => {
         e.preventDefault();
-        setSearchTerm(e.target.value);
+        await setSearchTerm(e.target.value);
         if (e.target.value) {
             navigate('/movies/search');
         } else {
@@ -28,9 +26,9 @@ const Header = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
-    // const setTheme = () => {
-    //     // dispatch(themeActions.themeToggle())
-    // }
+    const setTheme = () => {
+        setLightTheme(prev => !prev)
+    }
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary"
@@ -53,15 +51,17 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            {/*<NavLink className="nav-link shine" to={''} style={{color: 'white'}}>Home</NavLink>*/}
+                            <NavLink className="nav-link shine" to={''} style={{color: 'white'}}>Home</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link active shine" onClick={doneScroll} aria-current="page"
                                      to={'/movies'}
-                                     style={{color: 'darkblue'}}>Movies</NavLink>
+                                     style={{color: 'darkblue'}}>
+                                Movies
+                            </NavLink>
                         </li>
-                        {/*<img className={css.themeImg} src={lightTheme ? moon : sun} onClick={setTheme}*/}
-                        {/*     alt={'theme-logo'}/>*/}
+                        <img className={css.themeImg} src={lightTheme ? moon : sun} onClick={setTheme}
+                             alt={'theme-logo'}/>
                     </ul>
                     <div className={css.logo}>
                         <img
