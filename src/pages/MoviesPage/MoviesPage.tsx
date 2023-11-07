@@ -1,9 +1,8 @@
 import React, {FC} from 'react';
 
-import {MoviesList} from "../../components";
-import {MoviesPagination} from "../../components/MoviesContainer/MoviesPagination/MoviesPagination";
+import {GenresBadgesList, MoviesList} from "../../components";
+import {MoviesPagination} from "../../components";
 import css from './MoviesPage.module.css';
-import {GenresBadgesList} from "../../components/BadgesContainer/GenreBadgeList/GenreBadgeList";
 
 const MoviesPage: FC = () => {
     return (

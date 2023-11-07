@@ -13,6 +13,7 @@ const Badge: FC<IProps> = ({badge}) => {
     const {id, name} = badge;
     const navigate = useNavigate();
 
+
     const getGenreMovies = () => {
         navigate(`/movies/genre/${id}`);
     }

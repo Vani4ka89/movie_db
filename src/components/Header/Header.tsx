@@ -23,6 +23,7 @@ const Header = () => {
     };
 
     const doneScroll = () => {
+        setSearchTerm('');
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
 

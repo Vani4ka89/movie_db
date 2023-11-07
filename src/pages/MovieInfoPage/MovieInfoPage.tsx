@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import {useParams} from "react-router-dom";
 
-import {MovieInfo} from "../../components/MoviesContainer/MovieInfo/MovieInfo";
+import {MovieInfo} from "../../components";
 
 const MovieInfoPage: FC = () => {
     const {movieId} = useParams<{ movieId: string }>();

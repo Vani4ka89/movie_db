@@ -5,6 +5,7 @@ import {IMovie} from "../../../interfaces";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import {movieService} from "../../../services";
 import css from './MoviesOfGenre.module.css';
+import {Loading} from "../../Loading/Loading";
 
 interface IProps extends PropsWithChildren {
 
@@ -22,7 +23,7 @@ const MoviesOfGenre: FC<IProps> = () => {
 
     return (
         <div className={css.MoviesOfGenre}>
-            {movies.map(movie => < MoviesListCard key={movie.id} movie={movie}/>)}
+            {movies ? movies.map(movie => < MoviesListCard key={movie.id} movie={movie}/>) : <Loading/>}
         </div>
     );
 };

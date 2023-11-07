@@ -4,6 +4,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {movieService} from "../../services";
 import {IMovie} from "../../interfaces";
 import css from './GenreBadge.module.css';
+import {Loading} from "../Loading/Loading";
 
 const GenreBadge = () => {
     const {movieId} = useParams<{ movieId: string }>();
@@ -15,7 +16,7 @@ const GenreBadge = () => {
     }, [movieId])
 
     if (!movie) {
-        return <div>Loading...</div>
+        return <Loading/>
     }
 
     const {genres} = movie;
