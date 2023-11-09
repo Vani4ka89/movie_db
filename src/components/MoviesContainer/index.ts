@@ -10,3 +10,5 @@ export * from './MovieInfo/MovieInfo';
 export * from './MovieInfo/MovieInfo.module.css';
 export * from './MoviesFound/MoviesFound';
 export * from './MoviesFound/MoviesFound.module.css';
+export * from './MoviesVideo/MoviesVideo';
+export * from './Video/Video';
