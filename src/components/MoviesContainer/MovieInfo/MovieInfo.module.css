@@ -26,13 +26,22 @@
     padding-bottom: 30px;
 }
 
+.content h1 {
+    color: snow;
+}
+
 .content p {
     margin-top: 40px;
+    color: #1ab5ee;
 }
 
 .content h1, p, h5 {
     text-align: center;
-    color: #000;
+}
+
+.content h5 {
+    color: #918f8f;
+    text-align: center;
 }
 
 .btnPlay {

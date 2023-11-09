@@ -1,15 +1,11 @@
-import {FC, PropsWithChildren, useEffect, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import {movieService} from "../../../services";
-import {IVideo} from "../../../interfaces/video.interface";
+import {IVideo} from "../../../interfaces";
 import {Video} from "../Video/Video";
 
-interface IProps extends PropsWithChildren {
-
-}
-
-const MoviesVideo: FC<IProps> = () => {
+const MoviesVideo: FC = () => {
     const {movieId} = useParams<{ movieId: string }>();
     const [videos, setVideos] = useState<IVideo[]>([]);
     const trailers = videos.filter(trailer => trailer.type === 'Trailer');
@@ -20,7 +16,7 @@ const MoviesVideo: FC<IProps> = () => {
 
     return (
         <div>
-            {trailers.map(trailer => <Video key={trailer.id} trailer={trailer}/>)}
+            {trailers && trailers.map(trailer => <Video key={trailer.id} trailer={trailer}/>)}
         </div>
     );
 };

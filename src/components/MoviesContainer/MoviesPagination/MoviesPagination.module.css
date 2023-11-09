@@ -1,5 +1,6 @@
 .MoviesPagination {
     display: flex;
+    margin-top: 20px;
 }
 
 .MoviesPagination button {
@@ -9,6 +10,7 @@
     padding: 5px 10px;
     border: 1px solid darkcyan;
     border-radius: 10px;
+    transition: all ease 300ms;
 }
 
 .MoviesPagination button:not(:first-child) {
@@ -19,4 +21,5 @@
     background-color: darkcyan;
     color: #ffcc00;
     cursor: pointer;
+    box-shadow: rgba(180, 252, 115, 0.99) 2px 2px 10px;
 }

@@ -1,11 +1,8 @@
-import {FC, PropsWithChildren} from 'react';
-import {MoviesVideo} from "../../components/MoviesContainer/MoviesVideo/MoviesVideo";
+import {FC} from 'react';
 
-interface IProps extends PropsWithChildren {
+import {MoviesVideo} from "../../components";
 
-}
-
-const MoviesVideoPage: FC<IProps> = () => {
+const MoviesVideoPage: FC = () => {
     return (
         <div>
             <MoviesVideo/>

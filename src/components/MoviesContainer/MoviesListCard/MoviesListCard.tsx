@@ -26,18 +26,19 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
                     <div className={css.imageBlock}>
                         <img src={`${posterBaseUrl}/${poster_path}`} alt={title}/>
                     </div>
-                        <h5>{title}</h5>
-                    {/*<div className={css.cardContent}>*/}
-                        <div className={css.additionalData}>
-                            <div>
-                                <Rating name="read-only" defaultValue={vote_average} readOnly max={10} precision={0.5}
-                                        size='small'/>
-                            </div>
-                            <div className={css.year}>
-                                {release_date?.substring(0, 4)}
-                            </div>
+                    <h5>{title}</h5>
+                    <div className={css.additionalData}>
+                        <div>
+                            <Rating name="read-only"
+                                    defaultValue={vote_average}
+                                    readOnly
+                                    max={10}
+                                    precision={0.5}
+                                    size='small'
+                            />
                         </div>
-                    {/*</div>*/}
+                        <div className={css.year}>{release_date?.substring(0, 4)}</div>
+                    </div>
                 </div>}
         </div>
     );

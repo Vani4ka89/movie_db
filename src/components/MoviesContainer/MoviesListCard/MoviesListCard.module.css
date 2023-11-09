@@ -1,7 +1,7 @@
 .MoviesListCard {
-    height: 420px;
+    height: 450px;
     width: 250px;
-    margin: 10px;
+    margin: 20px 10px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 
 .MoviesListCard:hover {
     cursor: pointer;
-    box-shadow: rgba(249, 217, 1, 0.87) 0 8px 20px;
+    box-shadow: rgba(180, 252, 115, 0.99) 0 8px 30px;
     transform: scale(1.05) translate(5px, -10px);
 }
 
@@ -33,18 +33,13 @@
     border-radius: 15px 15px 0 0;
 }
 
-/*.cardContent {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    flex: 0 1 auto;*/
-/*    color: snow;*/
-/*    padding: 5px;*/
-/*}*/
 
 .MoviesListCard h5 {
     font-size: 15px;
     font-weight: bold;
     margin: 5px 0 20px 0;
+    padding: 0 5px;
+    text-align: center;
     color: snow;
 }
 

@@ -1,7 +1,7 @@
 import {FC, PropsWithChildren} from 'react';
 import {Container} from "react-bootstrap";
 
-import {IVideo} from "../../../interfaces/video.interface";
+import {IVideo} from "../../../interfaces";
 
 interface IProps extends PropsWithChildren {
     trailer: IVideo;
