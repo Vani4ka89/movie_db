@@ -1,14 +1,10 @@
-import {FC, PropsWithChildren} from 'react';
+import {FC} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {Footer, Header} from "../../components";
 import css from './MainLayout.module.css';
 
-interface IProps extends PropsWithChildren {
-
-}
-
-const MainLayout: FC<IProps> = () => {
+const MainLayout: FC = () => {
     return (
         <div className={css.MainLayout}>
             <Header/>

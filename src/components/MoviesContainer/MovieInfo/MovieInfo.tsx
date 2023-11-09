@@ -31,7 +31,6 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
     }
 
     return (
-        <div>
             <div className={css.MovieInfo}>
                 <div>
                     <img src={`${posterBaseUrl}${poster_path}`} alt={title}/>
@@ -54,7 +53,6 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
                     <button className={css.btnPlay} onClick={getMovieVideos}>PLAY</button>
                 </div>
             </div>
-        </div>
     );
 };
 

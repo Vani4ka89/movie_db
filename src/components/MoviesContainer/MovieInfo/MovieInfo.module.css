@@ -13,22 +13,21 @@
 
 .MovieInfo img {
     height: 80%;
-    width: 74.9%;
+    width: 80%;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     max-width: 100%;
     width: 800px;
-    margin-left: 30px;
     padding-bottom: 30px;
 }
 
 .content p {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .content h1, p, h5 {
@@ -47,6 +46,6 @@
 }
 
 .btnPlay:hover {
-    background-color: rgba(78, 234, 99, 0.2);
-    color: #ffcc00;
+    background-color: #b20606;
+    color: snow;
 }
