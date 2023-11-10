@@ -7,10 +7,6 @@
     align-items: center;
 }
 
-.MovieInfo h1 {
-    margin-bottom: 30px;
-}
-
 .MovieInfo img {
     height: 80%;
     width: 80%;
@@ -27,7 +23,10 @@
 }
 
 .content h1 {
-    color: snow;
+    color: #04044f;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: Helvetica sans-serif;
 }
 
 .content p {

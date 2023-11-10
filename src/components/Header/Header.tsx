@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FC} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 
 import css from './Header.module.css';
@@ -6,14 +6,18 @@ import sun from '../../assets/images/free-icon-sun-5247953.png';
 import moon from '../../assets/images/free-icon-moon-3599494.png';
 import {useSearchTerm} from "../../hooks";
 
-const Header = () => {
+interface IProps {
+    setTheme: () => void;
+    lightTheme: boolean;
+}
+
+const Header: FC<IProps> = ({setTheme, lightTheme}) => {
     const navigate = useNavigate();
     const {searchTerm, setSearchTerm} = useSearchTerm();
-    const [lightTheme, setLightTheme] = useState<boolean>(false);
 
-    const searchMovies = async (e: ReturnType<typeof Object>) => {
+    const searchMovies = async (e: any) => {
         e.preventDefault();
-        await setSearchTerm(e.target.value);
+        setSearchTerm(e.target.value);
         if (e.target.value) {
             navigate('/movies/search');
         } else {
@@ -27,12 +31,8 @@ const Header = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
-    const setTheme = () => {
-        setLightTheme(prev => !prev)
-    }
-
     return (
-        <nav className="navbar navbar-expand-lg bg-black" style={{
+        <nav className={`navbar navbar-expand-lg ${lightTheme ? 'bg-dark-subtle' : 'bg-black'}`} style={{
             position: 'sticky',
             top: '0',
             zIndex: '9',
