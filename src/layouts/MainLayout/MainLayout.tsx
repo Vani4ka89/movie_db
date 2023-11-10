@@ -1,21 +1,22 @@
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {Footer, Header} from "../../components";
 import css from './MainLayout.module.css';
+import {useSetTheme} from "../../hooks/useSetTheme";
 
 const MainLayout: FC = () => {
-    const [lightTheme, setLightTheme] = useState<boolean>(true);
+    const {darkTheme, setDarkTheme} = useSetTheme();
 
-    const setTheme = () => {
-        setLightTheme(prev => !prev)
+    const changeTheme = () => {
+        setDarkTheme(!darkTheme)
     }
 
     return (
-        <div className={`${lightTheme ? `${css.MainLayoutLight}` : `${css.MainLayoutDark}`}`}>
-            <Header lightTheme={lightTheme} setTheme={setTheme}/>
+        <div className={`${darkTheme ? `${css.MainLayoutDark}` : `${css.MainLayoutLight}`}`}>
+            <Header darkTheme={darkTheme} changeTheme={changeTheme}/>
             <Outlet/>
-            <Footer lightTheme={lightTheme}/>
+            <Footer darkTheme={darkTheme}/>
         </div>
     );
 };

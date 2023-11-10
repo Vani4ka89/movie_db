@@ -9,10 +9,8 @@
     align-items: center;
     border: 5px solid #032b53;
     border-radius: 15px;
-    background-color: #030a26;
     transition: all ease 500ms;
 }
-
 
 .MoviesListCard:hover {
     cursor: pointer;
@@ -34,7 +32,7 @@
 }
 
 
-.MoviesListCard h5 {
+.titleLight {
     font-size: 15px;
     font-weight: bold;
     margin: 5px 0 20px 0;
@@ -43,12 +41,25 @@
     color: snow;
 }
 
+.titleDark {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px 0 20px 0;
+    padding: 0 5px;
+    text-align: center;
+    color: #030328;
+}
+
 .additionalData {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.year {
+.yearLight {
     color: snow;
+}
+
+.yearDark {
+    color: #020225;
 }

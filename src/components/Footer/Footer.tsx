@@ -4,12 +4,12 @@ import img from '../../assets/images/tmdb.png';
 import css from './Footer.module.css';
 
 interface IProps {
-    lightTheme: boolean;
+    darkTheme: boolean;
 }
 
-const Footer: FC<IProps> = ({lightTheme}) => {
+const Footer: FC<IProps> = ({darkTheme}) => {
     return (
-        <div className={`${lightTheme ? `${css.FooterLight}`:`${css.FooterDark}`}`}>
+        <div className={`${darkTheme ? `${css.FooterDark}`:`${css.FooterLight}`}`}>
             <div className={css.content}>
                 <img src={img} alt={"logo"}/>
                 <div>This product uses the TMDB API but is not endorsed or certified by TMDB.</div>

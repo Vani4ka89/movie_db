@@ -1,9 +1,7 @@
-import {useContext} from "react";
-
-import {Context} from "../hoc";
+import {useAppContext} from "./useAppContext";
 
 const useSearchTerm = () => {
-    const [searchTerm, setSearchTerm] = useContext(Context);
+    const {searchTerm, setSearchTerm} = useAppContext();
 
     return {
         searchTerm,

@@ -7,11 +7,11 @@ import moon from '../../assets/images/free-icon-moon-3599494.png';
 import {useSearchTerm} from "../../hooks";
 
 interface IProps {
-    setTheme: () => void;
-    lightTheme: boolean;
+    changeTheme: () => void;
+    darkTheme: boolean;
 }
 
-const Header: FC<IProps> = ({setTheme, lightTheme}) => {
+const Header: FC<IProps> = ({changeTheme, darkTheme}) => {
     const navigate = useNavigate();
     const {searchTerm, setSearchTerm} = useSearchTerm();
 
@@ -32,7 +32,7 @@ const Header: FC<IProps> = ({setTheme, lightTheme}) => {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg ${lightTheme ? 'bg-dark-subtle' : 'bg-black'}`} style={{
+        <nav className={`navbar navbar-expand-lg ${darkTheme ? 'bg-black' : 'bg-dark-subtle'}`} style={{
             position: 'sticky',
             top: '0',
             zIndex: '9',
@@ -58,7 +58,7 @@ const Header: FC<IProps> = ({setTheme, lightTheme}) => {
                                 Movies
                             </NavLink>
                         </li>
-                        <img className={css.themeImg} src={lightTheme ? moon : sun} onClick={setTheme}
+                        <img className={css.themeImg} src={darkTheme ? sun : moon} onClick={changeTheme}
                              alt={'theme-logo'}/>
                     </ul>
                     <div className={css.logo}>

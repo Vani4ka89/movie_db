@@ -6,6 +6,7 @@ import {Rating} from "@mui/material";
 import {IMovie} from "../../../interfaces";
 import {posterBaseUrl} from "../../../constants";
 import css from './MoviesListCard.module.css';
+import {useSetTheme} from "../../../hooks/useSetTheme";
 
 interface IProps extends PropsWithChildren {
     movie: IMovie;
@@ -14,6 +15,7 @@ interface IProps extends PropsWithChildren {
 const MoviesListCard: FC<IProps> = ({movie}) => {
     const {id, title, backdrop_path, release_date, poster_path, vote_average} = movie;
     const navigate = useNavigate();
+    const {darkTheme} = useSetTheme();
 
     const getMovieInfo = () => {
         navigate(`/movies/${id}`);
@@ -22,11 +24,12 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
     return (
         <div key={id} onClick={getMovieInfo}>
             {backdrop_path &&
-                <div className={css.MoviesListCard}>
+                <div
+                    className={`${darkTheme ? `${css.MoviesListCard}` : `${css.MoviesListCard}`}`}>
                     <div className={css.imageBlock}>
                         <img src={`${posterBaseUrl}/${poster_path}`} alt={title}/>
                     </div>
-                    <h5>{title}</h5>
+                    <h5 className={`${darkTheme ? `${css.titleLight}` : `${css.titleDark}`}`}>{title}</h5>
                     <div className={css.additionalData}>
                         <div>
                             <Rating name="read-only"
@@ -37,7 +40,8 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
                                     size='small'
                             />
                         </div>
-                        <div className={css.year}>{release_date?.substring(0, 4)}</div>
+                        <div
+                            className={`${darkTheme ? `${css.yearLight}` : `${css.yearDark}`}`}>{release_date?.substring(0, 4)}</div>
                     </div>
                 </div>}
         </div>

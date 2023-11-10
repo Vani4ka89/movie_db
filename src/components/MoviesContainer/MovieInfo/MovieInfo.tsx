@@ -9,6 +9,7 @@ import {posterBaseUrl} from "../../../constants";
 import {GenreBadge} from "../../GenreBadge/GenreBadge";
 import css from './MovieInfo.module.css';
 import {Loading} from "../../Loading/Loading";
+import {useSetTheme} from "../../../hooks/useSetTheme";
 
 interface IProps extends PropsWithChildren {
     movieId: string;
@@ -17,6 +18,7 @@ interface IProps extends PropsWithChildren {
 const MovieInfo: FC<IProps> = ({movieId}) => {
     const [movie, setMovie] = useState<IMovie>(null);
     const navigate = useNavigate();
+    const {darkTheme} = useSetTheme();
 
     useEffect(() => {
         movieService.getById(+movieId).then(({data}) => setMovie(data));
@@ -31,28 +33,28 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
     }
 
     return (
-            <div className={css.MovieInfo}>
-                <div>
-                    <img src={`${posterBaseUrl}${poster_path}`} alt={title}/>
-                </div>
-                <div className={css.content}>
-                    <h1>{original_title}</h1>
-                    <GenreBadge/>
-                    <p>Rating</p>
-                    <div>
-                        <Rating
-                            name="read-only"
-                            defaultValue={vote_average}
-                            readOnly max={10}
-                            precision={0.1}
-                            size='large'
-                        />
-                    </div>
-                    <p>Overview</p>
-                    <h5>{overview}</h5>
-                    <button className={css.btnPlay} onClick={getMovieVideos}>PLAY</button>
-                </div>
+        <div className={css.MovieInfo}>
+            <div>
+                <img src={`${posterBaseUrl}${poster_path}`} alt={title}/>
             </div>
+            <div className={css.content}>
+                <h1 className={`${darkTheme ? `${css.titleLight}` : `${css.titleDark}`}`}>{original_title}</h1>
+                <GenreBadge/>
+                <p>Rating</p>
+                <div>
+                    <Rating
+                        name="read-only"
+                        defaultValue={vote_average}
+                        readOnly max={10}
+                        precision={0.1}
+                        size='large'
+                    />
+                </div>
+                <p>Overview</p>
+                <h5>{overview}</h5>
+                <button className={css.btnPlay} onClick={getMovieVideos}>PLAY</button>
+            </div>
+        </div>
     );
 };
 

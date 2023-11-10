@@ -1,9 +1,7 @@
-import {useContext} from "react";
-
-import {Context} from "../hoc";
+import {useAppContext} from "./useAppContext";
 
 const useSetTheme = () => {
-    const {state} = useContext(Context);
+    const {state} = useAppContext();
     const [darkTheme, setDarkTheme] = state;
 
     return {

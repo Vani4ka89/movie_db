@@ -22,16 +22,24 @@
     padding-bottom: 30px;
 }
 
-.content h1 {
+.titleDark {
     color: #04044f;
     font-weight: bold;
     margin-bottom: 30px;
     font-family: Helvetica sans-serif;
 }
 
+.titleLight {
+    color: snow;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: Helvetica sans-serif;
+}
+
+
 .content p {
     margin-top: 40px;
-    color: #1ab5ee;
+    color: #0a6688;
 }
 
 .content h1, p, h5 {
