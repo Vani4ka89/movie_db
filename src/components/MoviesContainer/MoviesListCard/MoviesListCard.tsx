@@ -25,19 +25,21 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
         <div key={id} onClick={getMovieInfo}>
             {backdrop_path &&
                 <div
-                    className={`${darkTheme ? `${css.MoviesListCard}` : `${css.MoviesListCard}`}`}>
+                    className={`${darkTheme ? `${css.MoviesListCardDark}` : `${css.MoviesListCardLight}`}`}>
                     <div className={css.imageBlock}>
                         <img src={`${posterBaseUrl}/${poster_path}`} alt={title}/>
                     </div>
                     <h5 className={`${darkTheme ? `${css.titleLight}` : `${css.titleDark}`}`}>{title}</h5>
                     <div className={css.additionalData}>
                         <div>
-                            <Rating name="read-only"
-                                    defaultValue={vote_average}
-                                    readOnly
-                                    max={10}
-                                    precision={0.5}
-                                    size='small'
+                            <Rating
+                                name="read-only"
+                                defaultValue={vote_average}
+                                readOnly
+                                max={10}
+                                precision={0.5}
+                                size='small'
+                                style={{color: '#50cdf5', fontSize: '17px'}}
                             />
                         </div>
                         <div

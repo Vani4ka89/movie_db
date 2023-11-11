@@ -6,7 +6,7 @@ interface IProps extends PropsWithChildren {
 const Context = createContext(null);
 
 const ContextProvider: FC<IProps> = ({children}) => {
-    const state = useState(false);
+    const state = useState(true);
     const [searchTerm, setSearchTerm] = useState(null);
 
     return (

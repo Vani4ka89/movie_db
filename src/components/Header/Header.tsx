@@ -40,7 +40,7 @@ const Header: FC<IProps> = ({changeTheme, darkTheme}) => {
             opacity: '0.8'
         }}>
             <div className="container-fluid">
-                <NavLink className="navbar-brand" to={'home'} style={{color: 'white'}}></NavLink>
+                {/*<NavLink className="navbar-brand" to={'home'} style={{color: 'white'}}></NavLink>*/}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +51,14 @@ const Header: FC<IProps> = ({changeTheme, darkTheme}) => {
                         {/*<li className="nav-item">*/}
                         {/*    <NavLink className="nav-link shine" to={''} style={{color: 'black'}}>Home</NavLink>*/}
                         {/*</li>*/}
-                        <li className="nav-item">
-                            <NavLink className="nav-link active shine" onClick={doneScroll} aria-current="page"
-                                     to={'/movies'}
-                                     style={{color: '#7c5af6', fontSize: '20px', fontWeight: 'bolder'}}>
+                        <li className="nav - item">
+                            <NavLink
+                                className={`nav - link active shine ${darkTheme ? `${css.navBtnDark}` : `${css.navBtnLight}`}`}
+                                onClick={doneScroll}
+                                aria-current="page"
+                                to={'/movies'}
+                                style={{color: '#0892be', padding: '4px 10px', textDecoration: 'none'}}
+                            >
                                 Movies
                             </NavLink>
                         </li>

@@ -64,4 +64,5 @@
 .btnPlay:hover {
     background-color: #b20606;
     color: snow;
+    box-shadow: #4ebd7b 2px 2px 10px;
 }
