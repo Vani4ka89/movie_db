@@ -3,13 +3,13 @@ import {Outlet} from "react-router-dom";
 
 import {Footer, Header} from "../../components";
 import css from './MainLayout.module.css';
-import {useSetTheme} from "../../hooks/useSetTheme";
+import {useSetTheme} from "../../hooks";
 
 const MainLayout: FC = () => {
     const {darkTheme, setDarkTheme} = useSetTheme();
 
     const changeTheme = () => {
-        setDarkTheme(!darkTheme)
+        setDarkTheme(!darkTheme);
     }
 
     return (

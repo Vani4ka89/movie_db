@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
 
 import {Badge} from "../Badge/Badge";
-import {genreService} from "../../../services/genre.service";
-import {IGenreBadge} from "../../../interfaces/genreBadge.interface";
-import css from './GenreBadgeList.module.css';
+import {genreService} from "../../../services";
+import {IGenreBadge} from "../../../interfaces";
+import css from './BadgesList.module.css';
 
-const GenresBadgesList: FC = () => {
+const BadgesList: FC = () => {
     const [badges, setBadges] = useState<IGenreBadge[]>([]);
 
     useEffect(() => {
@@ -13,10 +13,10 @@ const GenresBadgesList: FC = () => {
     }, []);
 
     return (
-        <div className={css.GenreBadgeList}>
+        <div className={css.BadgesList}>
             {badges.map(badge => <Badge key={badge.id} badge={badge}/>)}
         </div>
     );
 };
 
-export {GenresBadgesList};
+export {BadgesList};

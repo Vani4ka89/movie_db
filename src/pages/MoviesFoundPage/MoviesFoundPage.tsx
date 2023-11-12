@@ -1,12 +1,12 @@
 import {FC} from 'react';
 
-import {GenresBadgesList, MoviesFound, MoviesPagination} from "../../components";
+import {BadgesList, MoviesFound, MoviesPagination} from "../../components";
 import css from './MoviesFoundPage.module.css';
 
 const MoviesFoundPage: FC = () => {
     return (
         <div className={css.MoviesFoundPage}>
-            <GenresBadgesList/>
+            <BadgesList/>
             <MoviesFound/>
             <MoviesPagination/>
         </div>

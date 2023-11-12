@@ -15,7 +15,6 @@ const Badge: FC<IProps> = ({badge}) => {
     const navigate = useNavigate();
     const {setSearchTerm} = useSearchTerm();
 
-
     const getGenreMovies = () => {
         navigate(`/movies/genre/${id}`);
         setSearchTerm('');

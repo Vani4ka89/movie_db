@@ -4,4 +4,4 @@ import {Context} from "../hoc";
 
 const useAppContext = () => useContext(Context);
 
-export {useAppContext}
+export {useAppContext};

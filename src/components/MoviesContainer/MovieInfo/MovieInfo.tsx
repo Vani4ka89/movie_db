@@ -6,10 +6,10 @@ import {Rating} from "@mui/material";
 import {IMovie} from "../../../interfaces";
 import {movieService} from "../../../services";
 import {posterBaseUrl} from "../../../constants";
-import {GenreBadge} from "../../GenreBadge/GenreBadge";
 import css from './MovieInfo.module.css';
 import {Loading} from "../../Loading/Loading";
-import {useSetTheme} from "../../../hooks/useSetTheme";
+import {useSetTheme} from "../../../hooks";
+import {GenreBadge} from "../../BadgesContainer";
 
 interface IProps extends PropsWithChildren {
     movieId: string;
@@ -24,12 +24,14 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
         movieService.getById(+movieId).then(({data}) => setMovie(data));
     }, [movieId]);
 
-    if (!movie) return <Loading/>;
+    if (!movie) {
+        return <Loading/>;
+    }
 
     const {id, poster_path, title, original_title, vote_average, overview} = movie;
 
     const getMovieVideos = () => {
-        navigate(`/movies/${id}/video`)
+        navigate(`/movies/${id}/video`);
     }
 
     return (

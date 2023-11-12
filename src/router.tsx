@@ -1,8 +1,8 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {MoviesFoundPage, MoviesOfGenrePage, MoviesPage, MoviesVideoPage} from "./pages";
-import {MovieInfoPage} from "./pages";
+import {MovieInfoPage, MoviesFoundPage, MoviesOfGenrePage, MoviesPage, MoviesVideoPage} from "./pages";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
@@ -18,6 +18,4 @@ const router = createBrowserRouter([
     }
 ])
 
-export {
-    router
-}
+export {router};

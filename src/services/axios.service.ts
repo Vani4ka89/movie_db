@@ -12,6 +12,4 @@ axiosService.interceptors.request.use(request => {
     return request;
 })
 
-export {
-    axiosService
-}
+export {axiosService};

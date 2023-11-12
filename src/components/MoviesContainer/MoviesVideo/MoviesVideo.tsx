@@ -11,7 +11,7 @@ const MoviesVideo: FC = () => {
     const trailers = videos.filter(trailer => trailer.type === 'Trailer');
 
     useEffect(() => {
-        movieService.getVideo(+movieId).then(({data: {results}}) => setVideos(results))
+        movieService.getVideo(+movieId).then(({data: {results}}) => setVideos(results));
     }, [movieId]);
 
     return (

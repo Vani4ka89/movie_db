@@ -19,7 +19,7 @@ const MoviesPagination: FC = () => {
 
     const nextPage = (e: ReturnType<typeof Object>) => {
         e.preventDefault();
-        setQuery(prev => ({...prev, page: page + 1}))
+        setQuery(prev => ({...prev, page: page + 1}));
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
 

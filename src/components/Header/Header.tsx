@@ -22,13 +22,13 @@ const Header: FC<IProps> = ({changeTheme, darkTheme}) => {
             navigate('/movies/search');
         } else {
             navigate('/movies');
-            window.scrollTo({top: 0, behavior: 'smooth'})
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     };
 
     const doneScroll = () => {
         setSearchTerm('');
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     return (

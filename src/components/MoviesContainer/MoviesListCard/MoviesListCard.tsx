@@ -6,7 +6,7 @@ import {Rating} from "@mui/material";
 import {IMovie} from "../../../interfaces";
 import {posterBaseUrl} from "../../../constants";
 import css from './MoviesListCard.module.css';
-import {useSetTheme} from "../../../hooks/useSetTheme";
+import {useSetTheme} from "../../../hooks";
 
 interface IProps extends PropsWithChildren {
     movie: IMovie;

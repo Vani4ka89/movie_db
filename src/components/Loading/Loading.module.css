@@ -65,6 +65,8 @@
     right: 0;
     width: 4rem;
     margin: auto;
+    color: #7c5af6;
+    font-size: 25px;
 }
 
 .loaderText:after {
