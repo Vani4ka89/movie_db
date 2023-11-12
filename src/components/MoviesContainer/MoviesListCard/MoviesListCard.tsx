@@ -6,7 +6,7 @@ import {Rating} from "@mui/material";
 import {IMovie} from "../../../interfaces";
 import {posterBaseUrl} from "../../../constants";
 import css from './MoviesListCard.module.css';
-import {useSetTheme} from "../../../hooks";
+import {useSearchTerm, useSetTheme} from "../../../hooks";
 
 interface IProps extends PropsWithChildren {
     movie: IMovie;
@@ -16,9 +16,11 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
     const {id, title, backdrop_path, release_date, poster_path, vote_average} = movie;
     const navigate = useNavigate();
     const {darkTheme} = useSetTheme();
+    const {setSearchTerm} = useSearchTerm();
 
     const getMovieInfo = () => {
         navigate(`/movies/${id}`);
+        setSearchTerm('');
     };
 
     return (
