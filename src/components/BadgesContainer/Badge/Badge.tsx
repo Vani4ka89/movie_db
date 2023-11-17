@@ -18,7 +18,7 @@ const Badge: FC<IProps> = ({badge}) => {
     const getGenreMovies = () => {
         navigate(`/movies/genre/${id}`);
         setSearchTerm('');
-    }
+    };
 
     return (
         <div key={id} className={css.btnBox}>

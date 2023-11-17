@@ -19,6 +19,6 @@ const movieService = {
     getVideo: (movieId: number): IRes<IVideoPagination<IVideo[]>> => {
         return axiosService.get(urls.movies.video(movieId));
     }
-}
+};
 
 export {movieService};

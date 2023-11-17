@@ -10,7 +10,7 @@ const MainLayout: FC = () => {
 
     const changeTheme = () => {
         setDarkTheme(!darkTheme);
-    }
+    };
 
     return (
         <div className={`${darkTheme ? `${css.MainLayoutDark}` : `${css.MainLayoutLight}`}`}>

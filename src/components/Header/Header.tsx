@@ -29,7 +29,7 @@ const Header: FC<IProps> = ({changeTheme, darkTheme}) => {
     const doneScroll = () => {
         setSearchTerm('');
         window.scrollTo({top: 0, behavior: 'smooth'});
-    }
+    };
 
     return (
         <nav className={`navbar navbar-expand-lg ${darkTheme ? 'bg-black' : 'bg-dark-subtle'}`} style={{

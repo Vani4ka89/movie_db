@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 
 import css from './Loading.module.css';
 
-const Loading = () => {
+const Loading: FC = () => {
     return (
         <div className={css.container}>
             <div className={css.loader}>

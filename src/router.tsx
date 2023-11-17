@@ -16,6 +16,6 @@ const router = createBrowserRouter([
             {path: 'movies/:movieId/video', element: <MoviesVideoPage/>}
         ]
     }
-])
+]);
 
 export {router};

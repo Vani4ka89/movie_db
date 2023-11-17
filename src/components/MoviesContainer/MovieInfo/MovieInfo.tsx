@@ -32,7 +32,7 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
 
     const getMovieVideos = () => {
         navigate(`/movies/${id}/video`);
-    }
+    };
 
     return (
         <div className={css.MovieInfo}>

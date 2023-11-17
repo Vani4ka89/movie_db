@@ -13,7 +13,7 @@ const GenreBadge = () => {
 
     useEffect(() => {
         movieService.getById(+movieId).then(({data}) => setMovie(data));
-    }, [movieId])
+    }, [movieId]);
 
     if (!movie) {
         return <Loading/>
@@ -23,7 +23,7 @@ const GenreBadge = () => {
 
     const getGenreMovies = (genreId: number) => {
         navigate(`/movies/genre/${genreId}`);
-    }
+    };
 
     return (
         <div className={css.GenreBadge}>
