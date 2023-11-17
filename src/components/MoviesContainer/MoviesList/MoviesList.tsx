@@ -7,8 +7,9 @@ import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import css from './MoviesList.module.css';
 
 const MoviesList: FC = () => {
+
     const [movies, setMovies] = useState<IMovie[]>([]);
-    let [query,] = useSearchParams({page: '1'});
+    const [query,] = useSearchParams({page: '1'});
 
     const page = +query.get('page');
 
